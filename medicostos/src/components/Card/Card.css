@@ -1,0 +1,55 @@
+.card {
+  display: flex;
+  align-items: start;
+  background-color: #ffffff; /* Color de fondo */
+  border-radius: 10px;
+  box-shadow: 0px 10px 8px rgba(134, 64, 64, 0.1);
+  margin: 20px;
+  padding: 40px;
+  width: 800px;
+  transition: transform 0.3s ease; /* Añadir transición suave */
+}
+
+.imgcard {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card-content h2 {
+  margin: 0;
+  font-size: 1.5em; /* Ajusta el tamaño si es necesario */
+  color: #0a0a0a;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #919191; /* Ajusta el color si es necesario */
+}
+
+.card-content p {
+  margin: 5px 0;
+  font-size: 1.3em;
+  font-weight: bold; /* Tamaño del texto */
+
+  color: #000000; /* Color del texto */
+}
+
+.precio {
+  align-self: flex-end;
+  font-size: 1.1em; /* Tamaño del texto */
+  color: #ffffff; /* Color del texto */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  /* Mueve la tarjeta hacia arriba cuando se pasa el cursor sobre ella */
+}

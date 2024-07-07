@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Calibri, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.btn-empty {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 815px) {
+  .display-pc {
+    display: none;
+  }
+
+  .display-mobile {
+    display: block;
+  }
+
+  header a {
+    padding: 0 15px;
+  }
+  #portada {
+    flex-direction: column;
+  }
+
+  #imagenPortada {
+    display: none;
+  }
+
+  #lema {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  #lema > span {
+    font-size: 24px;
+  }
+}
+/* App.css */
+.app-container {
+  padding: 20px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.search-container button {
+  padding: 5px 10px;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

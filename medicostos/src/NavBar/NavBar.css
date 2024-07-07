@@ -1,0 +1,37 @@
+.display-mobile {
+    display: none;
+}
+
+header {
+    display: flex;
+    background-color: var(--verde-oscuro);
+    height: 75px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+header a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.texto-logo {
+    font-size: 25px;
+}
+
+.icon-mobile {
+    margin: 7px 10px;
+    width: 30px;
+}
+
+.icon-pc {
+    width: 24px;
+    vertical-align:top;
+}

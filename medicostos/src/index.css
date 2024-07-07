@@ -1,0 +1,52 @@
+/* index.css */
+
+:root {
+  --verde-oscuro: #2b5b5f;
+  --aqua: #a4ffe2;
+  --naranja: #fba563;
+  --azul-oscuro: #26495a;
+  --blanco: #ffffff;
+  --gris: #828282;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.spinner {
+  margin: 20px auto;
+}
+
+.medications-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.medication-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}
+
+.medication-image {
+  width: 100%;
+  height: auto;
+}
+
+.pharmacy-info {
+  margin-top: 10px;
+}
+
+.pharmacy-logo {
+  width: 50px;
+  height: auto;
+}
