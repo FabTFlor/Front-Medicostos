@@ -8,7 +8,7 @@ const fetchMedications = async (query) => {
   const { data } = await axios.get(
     "http://localhost:8080/api/medications/search",
     {
-      params: { query, page: 0, size: 24 },
+      params: { query, page: 0, size: 32 },
     }
   );
   return data; // Asegúrate de que data sea un array de medicamentos

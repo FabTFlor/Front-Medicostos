@@ -11,6 +11,12 @@ body {
   background-color: white;
 }
 
+.medications-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .btn-empty {
   border: none;
   background-color: inherit;

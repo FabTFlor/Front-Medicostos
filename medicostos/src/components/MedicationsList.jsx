@@ -1,7 +1,7 @@
 import React from "react";
 import { useSearchMedications } from "../hooks/useSearchMedications";
-import MedicationCard from "./MedicationCard";
-import LoadingSpinner from "./LoadingSpinner";
+import MedicationCard from "./Card/MedicationCard";
+import LoadingSpinner from "./configs/LoadingSpinner";
 
 const MedicationsList = ({ query }) => {
   const { data, error, isLoading } = useSearchMedications(query);

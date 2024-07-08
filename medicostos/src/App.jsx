@@ -1,28 +1,18 @@
-import NavBar from "./NavBar/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import Portada from "./Portada/Portada";
-import Busqueda from "./Busqueda/Busqueda";
 import "./App.css";
-import { QueryClient, QueryClientProvider } from "react-query";
-import SearchBar from "./components/SearchBar";
-import ErrorBoundary from "./components/ErrorBoundary";
-
-const queryClient = new QueryClient();
+import { Routes, Route } from "react-router-dom";
+import Contacto from "./Contacto/Contacto";
+import Mapa from "./Mapa/Mapa";
 
 function App() {
   return (
     <>
       <NavBar />
-      <Portada />
-      <Busqueda />
-
-      <QueryClientProvider client={queryClient}>
-        <ErrorBoundary>
-          <div className="App">
-            <h1>Medications Search</h1>
-            <SearchBar />
-          </div>
-        </ErrorBoundary>
-      </QueryClientProvider>
+      <Routes>
+        <Route path="/" element={<Portada />}></Route>
+        <Route path="/contactanos" element={<Contacto />}></Route>
+      </Routes>
     </>
   );
 }

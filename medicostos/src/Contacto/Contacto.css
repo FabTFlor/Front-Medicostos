@@ -1,0 +1,132 @@
+.todo {
+  display: flex;
+  height: calc(
+    100vh - 75px
+  ); /* los 75px son por la altura que le puso jett al navbar */
+  align-items: center;
+  padding: 2rem 0 2rem 2rem; /* no puede ser lo que me costo esta rewea xd */
+  flex-direction: row;
+}
+
+.contenido {
+  display: flex;
+  height: 80%;
+  width: 50%;
+}
+
+.contenido2 {
+  flex: 1;
+  display: flex;
+  height: calc(100% + 4rem);
+  background-color: var(
+    --verde-oscuro
+  ) !important; /*  gonzalo good carriando insano aqui*/
+  width: 50%;
+}
+.contenidoFormulario {
+  display: flex;
+  flex-direction: column;
+}
+.titulo {
+  margin-bottom: 1rem;
+}
+
+.mensajito {
+  display: flex;
+  color: white;
+  flex-direction: column;
+}
+
+.mensajito > h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+.mensajito > p {
+  display: flex;
+  margin-top: 7rem; /*  no pudiste poner en el centro la wea, preguntale a los cabros */
+  margin: 7rem 2rem 0 2rem;
+}
+
+input {
+  border: 1px solid gray;
+  padding: 1rem;
+}
+
+.inputs p {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem 1rem;
+}
+#mensaje {
+  height: 6rem;
+}
+
+.enviar {
+  display: flex;
+  justify-content: center;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+.nombreApellido {
+  display: flex;
+  padding-top: 1rem;
+}
+
+.enviar button {
+  height: 2rem;
+  width: 4rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.enviar > button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .todo {
+    flex-direction: column;
+  }
+  .contenido2 {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .inputs {
+    width: 100%;
+    padding: 0;
+  }
+
+  .todo {
+    padding: 0;
+  }
+  .ayNoSe {
+    display: flow-root;
+  }
+  .enviar {
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+  }
+  .nombreApellido {
+    display: flex;
+    flex-direction: column;
+  }
+  .contenidoFormulario {
+    width: 100vh;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+}

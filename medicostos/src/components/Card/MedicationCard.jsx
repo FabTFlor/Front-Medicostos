@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/Card/Card.css";
+import "../Card/Card.css";
 
 const MedicationCard = ({ medication, index }) => {
   const backgroundColor = index % 2 === 0 ? "var(--aqua)" : "var(--naranja)";
@@ -7,7 +7,7 @@ const MedicationCard = ({ medication, index }) => {
   return (
     <div className="card" style={{ backgroundColor }}>
       <img
-        src={medication.urlImagen}
+        src={medication.farmaciaUrlImg}
         alt={medication.nombre}
         className="imgcard"
       />
