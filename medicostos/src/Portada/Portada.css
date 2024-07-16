@@ -1,3 +1,11 @@
+/* Portada.css */
+
+/* Portada.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,11 +15,14 @@ body {
 }
 
 .front {
+  position: relative;
   height: calc(100vh - 75px); /* Ajuste por el navbar */
   overflow: hidden;
-  transition: transform 0.5s ease-in-out;
 }
 
+/* .front.scrolled {
+   Agrega cualquier estilo adicional para cuando se haya desplazado 
+} */
 #portada {
   display: flex;
   align-items: center;
@@ -19,87 +30,51 @@ body {
 }
 
 #imagenPortada {
-  width: 50vw;
+  width: 50%;
   height: 100%;
   object-fit: cover;
 }
 
 #lema {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   background-color: var(--verde-oscuro);
   color: white;
   font-size: 52px;
   height: 100%;
-  gap: 10px;
-  padding: 2vh;
+  gap: 1rem;
+  padding: 4vh;
 }
 
 #lema > span {
   font-size: 30px;
 }
 
-#busqueda {
-  display: flex;
-  position: absolute;
-  top: 75px; /* Justo debajo del navbar */
-  left: 0;
-  width: 100%;
-  justify-content: center;
-  transition: top 2s ease-in-out;
+.search-results-container {
+  background-color: rgb(255, 255, 255);
+  height: 0vh;
 }
 
 .search-results-container.active {
-  display: flex;
-  min-height: 100vh;
-  justify-content: center; /* Centra el contenido */
-  align-items: flex-start; /* Alinea al inicio del contenedor */
-  position: relative;
-  top: -70vh; /* Puedes ajustar esta propiedad si es necesario */
+  display: block; /* Muestra el contenedor cuando se activa */
+  height: 100vh;
 }
 
-#busqueda active {
-  top: 50vh;
-}
-
-.search-results-container active {
-  display: flex;
-  min-height: 100vh;
-}
-
-.front.scrolled ~ #busqueda {
-  top: 20vh; /* Mueve la barra de búsqueda hacia arriba */
-}
-
-#busqueda-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-#busqueda input {
-  display: block;
-  position: static;
-  top: auto;
-  left: auto;
-  width: auto;
-  justify-content: flex-start;
-  transition: none;
-}
-
-#busqueda input:focus {
-  outline: none;
-}
-
-#resultados {
-  width: 100%;
-  padding-top: 20px;
+.search-results-container.active .busqueda {
+  height: calc(100vh - 75px);
+  top: 105vh; /* Ajusta esta propiedad para el desplazamiento cuando isScrolled es true */
 }
 
 .medications-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 1;
+  height: 80vh;
+  min-height: 800px;
+  width: 100vw;
+  transition: width 0.8s ease;
 }

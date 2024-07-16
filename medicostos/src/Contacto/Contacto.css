@@ -4,37 +4,44 @@
     100vh - 75px
   ); /* los 75px son por la altura que le puso jett al navbar */
   align-items: center;
-  padding: 2rem 0 2rem 2rem; /* no puede ser lo que me costo esta rewea xd */
   flex-direction: row;
+  background: linear-gradient(to right, white 50%, var(--verde-oscuro) 50%);
 }
 
 .contenido {
   display: flex;
-  height: 80%;
+  height: calc(100vh - 75px);
   width: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 .contenido2 {
   flex: 1;
   display: flex;
-  height: calc(100% + 4rem);
-  background-color: var(
-    --verde-oscuro
-  ) !important; /*  gonzalo good carriando insano aqui*/
+  height: calc(100vh - 75px);
+  /*  background-color: red !important; */ /*  gonzalo good carriando insano aqui*/
   width: 50%;
+  background-color: var(--verde-oscuro);
 }
 .contenidoFormulario {
   display: flex;
   flex-direction: column;
+  /* margin-top: 20vh; */
+  width: 80%;
 }
+
 .titulo {
   margin-bottom: 1rem;
 }
 
 .mensajito {
   display: flex;
+  justify-content: center;
   color: white;
   flex-direction: column;
+  gap: 0.5vw;
+  /* margin-top: 0vh; */
 }
 
 .mensajito > h2 {
@@ -44,8 +51,16 @@
 }
 .mensajito > p {
   display: flex;
-  margin-top: 7rem; /*  no pudiste poner en el centro la wea, preguntale a los cabros */
-  margin: 7rem 2rem 0 2rem;
+
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+}
+.p {
+  border: 5%;
+  padding: 0 5%;
+  background-color: var(--verde-oscuro);
+  font-size: 1.25rem;
 }
 
 input {
@@ -56,7 +71,8 @@ input {
 .inputs p {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem 1rem 1rem;
+  margin-top: 0.5rem;
+  /* margin-top: 1rem; */
 }
 #mensaje {
   height: 6rem;
@@ -65,6 +81,7 @@ input {
 .enviar {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 input,
@@ -78,6 +95,13 @@ textarea {
 .nombreApellido {
   display: flex;
   padding-top: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#nombre,
+#apellido {
+  width: 18vw;
 }
 
 .enviar button {
@@ -94,18 +118,26 @@ textarea {
   background-color: #333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
   .todo {
     flex-direction: column;
+    background: linear-gradient(to bottom, white 50%, white 50%);
   }
+
+  .contenido {
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 80%;
+  }
+
   .contenido2 {
-    height: 100vh;
+    height: auto;
     width: 100%;
+    padding: 2vh;
   }
 
   .inputs {
     width: 100%;
-    padding: 0;
   }
 
   .todo {
@@ -123,10 +155,34 @@ textarea {
     display: flex;
     flex-direction: column;
   }
+
   .contenidoFormulario {
-    width: 100vh;
+    width: 100vw;
     padding: 0;
     margin: 0;
     gap: 0;
   }
+
+  .mensajito {
+    height: 100%;
+    margin: 2vh 0 0;
+    align-items: center;
+  }
+  #nombre,
+  #apellido {
+    width: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+}
+.confirmacion > h2 {
+  display: flex;
+  padding: 1rem;
+  font-size: 100%;
+  justify-content: center;
 }

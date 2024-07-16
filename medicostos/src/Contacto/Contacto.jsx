@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "./Contacto.css";
 
 function Contacto() {
-  // Definimos el estado inicial del formulario usando useState.
-  // Este estado guarda los valores de los campos del formulario.
   const [formData, setFormData] = useState({
     nombre: "",
     apellido: "",
@@ -11,8 +10,8 @@ function Contacto() {
     mensaje: "",
   });
 
-  // Función para manejar cambios en los campos del formulario.
-  // Se ejecuta cada vez que el usuario escribe en un campo del formulario.
+  const [confirmada, setConfirmada] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -21,12 +20,29 @@ function Contacto() {
     });
   };
 
-  // Función para manejar el envío del formulario.
-  // Se ejecuta cuando el usuario envía el formulario.
+  const confirmacionClic = () => {
+    setConfirmada(true);
+  };
+
   const handleSubmit = (e) => {
-    e.preventDefault(); // Previene el comportamiento por defecto del formulario (recargar la página).
-    console.log("Form data submitted:", formData); // Imprime los datos del formulario en la consola.
-    alert("consulta enviada, gracias por su aporte"); // Muestra una alerta indicando que el formulario fue enviado.
+    e.preventDefault(); // Previene el comportamiento por defecto del formulario, recargar la página.
+
+    emailjs
+      .send(
+        "service_sx1exjf", // Service ID
+        "template_fil95n9", //  Template ID
+        formData,
+        "98u0wS5siZu56Tylr" //  User ID
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          confirmacionClic(); // Muestra el mensaje de confirmación
+        },
+        (error) => {
+          console.error("FAILED...", error);
+        }
+      );
   };
 
   return (
@@ -34,7 +50,7 @@ function Contacto() {
       <div className="contenido">
         <div className="contenidoFormulario">
           <div className="titulo">
-            <h1>Contactanos</h1>
+            <h1>Contáctanos</h1>
             <p>Ingresa tu consulta</p>
           </div>
           <div className="form">
@@ -47,9 +63,9 @@ function Contacto() {
                       <input
                         type="text"
                         id="nombre"
-                        name="nombre" // Asocia este textarea con el campo "nombre" en el estado
-                        value={formData.nombre} // Vincula el valor del textarea con el estado actual.
-                        onChange={handleChange} // // Actualiza el estado cuando el usuario escribe.
+                        name="nombre"
+                        value={formData.nombre}
+                        onChange={handleChange}
                         required
                       />
                     </p>
@@ -92,28 +108,48 @@ function Contacto() {
                 </div>
               </div>
             </form>
+            {confirmada && (
+              <div className="confirmacion">
+                <h2>Consulta enviada, gracias por su aporte.</h2>
+              </div>
+            )}
           </div>
         </div>
       </div>
       <div className="contenido2">
         <div className="mensajito">
-          <h2>Sobre nosotros</h2>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?
+          <h2 id="h2">Sobre nosotros</h2>
+          <p className="p">
+            Somos un equipo de desarrolladores que participó en el bootcamp de
+            Generation Chile, donde trabajamos arduamente para completar este
+            proyecto. Nos motiva profundamente el deseo de ayudar a la comunidad
+            y mejorar la transparencia en el sector farmacéutico. Por ello,
+            hemos creado una aplicación web diseñada para facilitar la
+            comparación de precios de medicamentos entre diferentes farmacias de
+            la comuna de Santiago, Chile.
           </p>
+          <p className="p">
+            Nuestra visión es proporcionar una plataforma que no solo beneficie
+            a los usuarios, permitiéndoles encontrar la mejor opción para sus
+            necesidades, sino también dar visibilidad a las farmacias más
+            pequeñas, que a menudo pasan desapercibidas. Creemos que todos
+            merecen acceso a medicamentos asequibles y de calidad, y nuestra
+            herramienta busca hacer precisamente eso.
+          </p>{" "}
+          <p className="p">
+            Invitamos a todos los usuarios a sumarse a nuestra comunidad,
+            utilizando la aplicación para ahorrar en sus compras de medicamentos
+            y mejorar su bienestar. Asimismo, extendemos una cálida invitación a
+            las farmacias interesadas en unirse a nuestra base de datos, para
+            que juntos podamos ofrecer una alternativa más justa y accesible
+            para todos. ¡Únete a nosotros y se parte del cambio hacia un sistema
+            de salud más inclusivo y eficiente!
+          </p>{" "}
+          <p className="p">Autores del Proyecto: </p>{" "}
+          <p className="p">
+            {" "}
+            Fabián Torres - Gonzalo Pavez - Ignacio Morales - Jett Puga
+          </p>{" "}
         </div>
       </div>
     </div>

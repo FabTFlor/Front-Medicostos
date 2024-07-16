@@ -1,60 +1,39 @@
+/* ESTE ES EL ORIGINAL */
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-  font-family: Calibri, sans-serif;
+  /*font-family: Calibri, sans-serif;*/
   margin: 0;
   padding: 0;
   background-color: white;
 }
 
-.medications-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.MedInfoStatico {
+  width: 30vh;
+  height: 30vh;
 }
 
 .btn-empty {
   border: none;
   background-color: inherit;
   cursor: pointer;
-}
-
-@media screen and (max-width: 815px) {
-  .display-pc {
-    display: none;
-  }
-
-  .display-mobile {
-    display: block;
-  }
-
-  header a {
-    padding: 0 15px;
-  }
-  #portada {
-    flex-direction: column;
-  }
-
-  #imagenPortada {
-    display: none;
-  }
-
-  #lema {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  #lema > span {
-    font-size: 24px;
-  }
-}
-/* App.css */
-.app-container {
-  padding: 20px;
 }
 
 .search-container {
@@ -70,32 +49,60 @@ body {
   padding: 5px 10px;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+  height: 100vh; /* Ajusta la altura según sea necesario */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%; /* Ajusta el ancho según sea necesario */
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
@@ -104,4 +111,329 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+/* AQUI TERMINA EL ORIGINAL */
+
+.app-container {
+  display: flex;
+  animation: show 1s;
+  transition: width 1 ease;
+}
+
+.app-container.selected {
+  display: flex;
+  /* background-color: #ccc; */ /*🤯 color de fondo al hacer clic*/
+}
+
+.medications-info {
+  display: none; /* Oculto por defecto */
+  transition: width 0.3s ease;
+  min-height: 750px;
+}
+
+.app-container .medications-info {
+  display: none;
+  animation: show 0.5s;
+  transition: width 0.5 ease;
+}
+
+.app-container.selected .medications-info {
+  display: flex;
+  animation: show 0.5s;
+  transition: width 0.5 ease;
+  width: 50%;
+  align-items: end;
+  justify-content: center;
+  z-index: 3 !important;
+  margin-top: 2%;
+}
+
+.search-results-container.active .medications-info {
+  display: flex; /* Mostrar cuando search-results-container esté activo */
+}
+.search-results-container .medications-info {
+  display: none;
+}
+
+.app-container.selected .medications-list {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.app-container.selected .cerrar {
+  display: none;
+}
+
+@media (max-width: 1250px) {
+  .medications-list {
+    display: flex;
+    justify-content: space-between !important;
+  }
+  .app-container.selected .medications-info {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    margin: 5vh 0;
+    top: -5vh;
+    left: 0;
+    z-index: 1; /* Asegúrate de que este número sea mayor que el de cualquier otro elemento en la página */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.95
+    ); /* Opcional: añade un fondo semitransparente */
+    pointer-events: auto;
+  }
+  .b {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  .a {
+    justify-content: center !important;
+  }
+  .map {
+    height: 10%;
+    width: 80%;
+  }
+
+  .terceraL {
+    margin: 0.5rem 0;
+  }
+  .app-container.selected .med-list {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .app-container.selected .medications-list {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.app-container.selected .cerrar {
+  display: block;
+}
+.app-container .cerrar {
+  display: none;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-height: 860px) {
+  .card {
+    max-height: 15vh;
+  }
+  .imgcard {
+    max-height: 4rem;
+    max-width: 4rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .imgMedicamento {
+    display: none;
+  }
+  .b > p {
+    display: none;
+  }
+  .botonMap {
+    width: 25vh !important;
+  }
+  .map {
+    min-height: 40%;
+  }
+  .b > h1 {
+    font-size: 1.2rem !important;
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-container {
+    display: flex;
+  }
+
+  .mensajito > h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (max-height: 1000px) {
+  #lema > b {
+    font-size: 30px;
+  }
+
+  #lema .span {
+    font-size: 20px;
+  }
+
+  .todo {
+    height: auto;
+  }
+
+  .mensajito > p {
+    font-size: 1.2rem;
+  }
+
+  .contenidoFormulario {
+    justify-content: center;
+  }
+  .map {
+    min-height: 20%;
+  }
+}
+@media screen and (max-height: 450px) {
+  .medications-list {
+    min-height: 120vh;
+  }
+  .a {
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  #lema {
+    gap: 0.5rem;
+    padding: 1vh !important;
+  }
+}
+@media screen and (max-height: 800px) {
+  .app-container .medications-info {
+    position: relative;
+    top: 0;
+  }
+  .mensajito > p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  #lema > b {
+    font-size: 25px;
+  }
+  .medications-info {
+    min-height: 350px;
+  }
+  .a {
+    margin-top: 50px;
+
+    height: 100vh;
+    min-height: 359px !important;
+  }
+  .b {
+    justify-content: center;
+    height: 95vh;
+    min-height: 359px !important;
+  }
+
+  #lema .span {
+    font-size: 15px;
+  }
+
+  .contenido {
+    height: auto !important;
+  }
+  .card {
+    height: 15vh;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .display-pc {
+    display: none;
+  }
+
+  .display-mobile {
+    display: block;
+  }
+
+  header a {
+    padding: 0 15px;
+    background-color: #ffffff00;
+    box-shadow: none;
+  }
+
+  #portada {
+    flex-direction: column;
+    background-color: var(--verde-oscuro);
+  }
+
+  #imagenPortada {
+    display: flex;
+    width: 100vw;
+    height: 40vh;
+  }
+
+  #lema {
+    font-size: 36px;
+    text-align: center;
+    align-items: center;
+    width: 100vw;
+    justify-content: start;
+    padding-top: 3rem;
+  }
+
+  #lema > span {
+    font-size: 24px;
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 30px;
+  margin: 1rem;
+}
+
+.pagination-controls button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #696969;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-controls button:hover {
+  background-color: #32676e;
+}
+
+@media (max-width: 650px) {
+  .card-content h2 {
+    font-size: 1rem;
+  }
+
+  .text-precio {
+    display: none;
+  }
+  .b > h5 {
+    font-size: 1rem !important;
+  }
+  .b > h1 {
+    font-size: 1rem !important;
+  }
+  .b {
+    width: 32vh !important;
+  }
+}
+.hidden {
+  display: none !important;
 }

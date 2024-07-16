@@ -1,0 +1,42 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vw;
+  padding: 2vw 3vw;
+}
+
+.subtitulo {
+  margin-left: calc(3vw + 10px);
+  margin-top: 2vw;
+}
+
+.texto {
+  margin: 2vw calc(3vw + 10px);
+}
+
+.texto > dt {
+  font-weight: bold;
+}
+
+.texto > dd {
+  margin-bottom: 10px;
+}
+
+.texto > li {
+  margin-left: 24px;
+  margin-bottom: 6px;
+}
+
+/* Media query para pantallas medianas */
+@media (max-width: 1000px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,59 @@
+.portada {
+  border: 4px solid #ddd;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.portada::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.portada:hover::before {
+  border-color: #44ccba;
+}
+
+.portada:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.portada.expanded {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.portada img {
+  width: 60%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.portada-content {
+  margin-top: 10px;
+}
+
+.more-content {
+  margin-top: 10px;
+  color: #555;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1.2rem;
+}

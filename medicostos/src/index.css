@@ -3,7 +3,7 @@
 :root {
   --verde-oscuro: #2b5b5f;
   --aqua: #a4ffe2;
-  --naranja: #fba563;
+  --naranja: #ff8f39de;
   --azul-oscuro: #26495a;
   --blanco: #ffffff;
   --gris: #828282;
@@ -26,7 +26,6 @@ body {
 
 .medications-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
