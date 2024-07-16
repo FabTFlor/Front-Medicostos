@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./2222.css";
+import React, { useState, useEffect } from "react";
+import "./Search.css";
 import MedicationsList from "../MedicationsList";
 import MedicationInfo from "../MedicationInfo";
 
@@ -7,6 +7,17 @@ const SearchBar = ({ setIsScrolled }) => {
   const [query, setQuery] = useState("");
   const [selectedMedication, setSelectedMedication] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
+  const [debouncedQuery, setDebouncedQuery] = useState(query);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedQuery(query);
+    }, 300); // Ajusta el tiempo según tus necesidades
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [query]);
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -41,14 +52,14 @@ const SearchBar = ({ setIsScrolled }) => {
         />
       </div>
       <div
-        className={`app-container ${!query ? "hidden" : ""} ${
+        className={`app-container ${!debouncedQuery ? "hidden" : ""} ${
           isSelected ? "selected" : ""
         }`}
       >
         <div className={`med-list ${isSelected ? "selected" : ""}`}>
-          {query && (
+          {debouncedQuery && (
             <MedicationsList
-              query={query}
+              query={debouncedQuery}
               onMedicationSelect={handleMedicationSelect}
               onCardClick={handleCardClick}
             />

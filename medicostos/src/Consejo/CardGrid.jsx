@@ -15,37 +15,34 @@ const CardGrid = () => {
         "https://upload.wikimedia.org/wikipedia/commons/3/34/Logotipo_Caja_Los_Andes.svg",
     },
     {
-      title: "Los Héroes",
-      content:
-        "Con tu tarjeta de Los Héroes, disfruta de descuentos especiales en medicamentos los días martes y jueves.",
+      title: "PedidosYa",
+      content: "30% de descuento para usuarios Plus.",
       moreContent:
-        "Los Héroes te ayuda a cuidar tu salud con descuentos en medicamentos en farmacias seleccionadas.",
-      image: "https://www.losheroes.cl/img/logo_app_videollamada.png",
+        "Disponible en PedidosYa para usuarios Plus: 30% de descuento en categoría restaurantes los lunes, en PedidosYa Market los miércoles, y en categoría farmacias los viernes.",
+      image:
+        "https://logowik.com/content/uploads/images/pedidosya5531.logowik.com.webp",
     },
     {
-      title: "BCI",
-      content:
-        "Con tu tarjeta BCI, obtén descuentos en medicamentos los días lunes y miércoles.",
+      title: "sbpay VISA",
+      content: "20% Descuento Salcobrand.",
       moreContent:
-        "Ahorra en tus compras de medicamentos utilizando tu tarjeta BCI en farmacias adheridas.",
+        "Aprovecha este beneficio exclusivo con tu tarjeta sbpay visa de lunes a viernes hasta el 31 de diciembre de 2024 en farmacias salcobrand: 20% .",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Bci_Logotype.svg/2560px-Bci_Logotype.svg.png",
+        "https://www.sbpay.cl/content/themes/sb_pay/dist/images/sbpay-logo-dark.svg",
     },
     {
-      title: "Santander",
-      content:
-        "Santander te ofrece descuentos exclusivos en medicamentos cada fin de semana.",
+      title: "CMR Falabella",
+      content: "Farmacias Ahumada 25% de dcto en medicamentos.",
       moreContent:
-        "Con tu tarjeta Santander, tienes descuento en medicamentos los días viernes.",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Banco_Santander_Logotipo.svg/2560px-Banco_Santander_Logotipo.svg.png",
+        "Válido hasta el 31 de diciembre de 2024. Oportunidades únicas todos los días. Disfrútala con todas tus tarjetas.",
+      image: "https://www.bancofalabella.cl/assets/logo-bf-cmr-compact.svg",
     },
     {
       title: "BancoEstado",
       content:
-        "Aprovecha los beneficios de BancoEstado y ahorra en tus medicamentos en farmacias asociadas.",
+        "Al comprar 3 productos iguales con tu tarjeta Banco Estado obten 33% dto.",
       moreContent:
-        "Con tu tarjeta BancoEstado, disfruta de descuentos en medicamentos los días lunes y viernes.",
+        "De martes a domingo, compra 3 productos iguales y obtén un 33% de descuento en cada uno de los productos seleccionados.​",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Logo_BancoEstado.svg/2560px-Logo_BancoEstado.svg.png",
     },
